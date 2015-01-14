@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record id="view_picking_shipping_fedex" model="ir.ui.view">
+			<field name="name">stock.picking.shipping.fedex</field>
+			<field name="model">stock.picking.out</field>
+			<field name="inherit_id" ref="shipping_api.view_picking_shipping_inherit"/>
+			<field name="priority" eval="20"/>
+			<field name="arch" type="xml">
+				<xpath expr="//page[@string='Shipping']/notebook/page[@string='Shipment']" position="after">
+				<page string="FedEx">
+				 	<group colspan="4" col="4" >
+						<separator string="FedEx" colspan="4"/>
+						<field name='fedex_service_type' attrs="{'required': [('ship_company_code','=','fedex')]}"/>
+						<field name="fedex_container"/>
+                        <!-- group colspan="4" col="4" >
+                            <separator string = "FedEx Dimension" colspan="4" />
+                            <field name="fedex_width" />
+                            <field name="fedex_length" />
+                            <field name="fedex_height" />
+                        </group -->
+					  </group>
+				</page>
+				</xpath>
+			</field>
+		</record>
+	</data>
+</openerp>

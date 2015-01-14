@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>
+		<record id="logistic_company_form_inherit_fedex" model="ir.ui.view">
+			<field name="name">logistic_company_form_inherit_fedex</field>
+			<field name="model">logistic.company</field>
+			<field name="inherit_id" ref="shipping_api.view_form_logistic_company"/>
+			<field name="arch" type="xml">
+				<xpath expr="//page[@string='Notes']" position="before">
+					<page string="FedEx" attrs="{'invisible':[('ship_company_code','!=','fedex')]}">
+					    <group>
+						<field name="fedex_account_shipping_id" nolabel='1' colspan="4"/>
+						</group>
+					</page>
+				</xpath>
+			</field>
+		</record>
+	</data>
+</openerp>
+

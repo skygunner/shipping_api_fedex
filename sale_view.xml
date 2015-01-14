@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+	<data>
+	  	<record model="ir.ui.view" id="sale_order_form_fedex">
+			<field name="name">sale.order.view_form.fedex</field>
+			<field name="model">sale.order</field>
+			<field name="inherit_id" ref="sale.view_order_form"/>
+			<field name="priority" eval="30" />
+			<field name="arch" type="xml">
+				<xpath expr="//page[@string='Other Information']" position="inside">
+					<newline/>
+					<group colspan="4" col="4" attrs="{'invisible':[('ship_company_code','!=','fedex')]}" >
+						<separator colspan="2" string="FedEx"/>
+						<newline/>
+						<field name="fedex_shipper_id" on_change="onchange_service(fedex_shipper_id)"/>
+						<field name="fedex_service_id" />
+						<field name="fedex_pickup_type"/>
+						<field name="fedex_packaging_type" widget="selection"/>
+					</group>
+				</xpath>
+			</field>
+		</record> 
+	</data>
+</openerp>

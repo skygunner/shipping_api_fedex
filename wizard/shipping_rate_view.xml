@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    	<!-- Shipping rate wizard -->
+        <record id="view_for_shipping_rate_wizard_fedex" model="ir.ui.view">
+            <field name="name">action_for_shipping_rate_wizard_fedex</field>
+            <field name="model">shipping.rate.wizard</field>
+             <field name="priority" eval="30"/>
+            <field name="inherit_id" ref="sale_negotiated_shipping.view_for_shipping_rate_wizard"/>
+            <field name="arch" type="xml">
+            	<xpath expr="//field[@name='rate_select']" position="before" >
+					<group colspan="4" col="4" attrs="{'invisible':['|',('rate_selection','=','rate_card'),('ship_company_code','!=','fedex') ]}">
+						<separator string="FedEx" colspan="4"/>
+						<field name='fedex_service_type' attrs="{'required': [('ship_company_code','=','fedex')]}"/>
+						<field name="fedex_container" attrs="{'required': [('ship_company_code','=','fedex')]}"/>
+
+                        <group colspan="4" col="4">
+                            <separator string = "FedEx Dimension" colspan="4" />
+                            <field name="fedex_width" attrs="{'required': [('ship_company_code','=','fedex')]}"/>
+                            <field name="fedex_length" attrs="{'required': [('ship_company_code','=','fedex')]}"/>
+                            <field name="fedex_height" attrs="{'required': [('ship_company_code','=','fedex')]}"/>
+                        </group>
+					</group>
+            	</xpath>
+            </field>
+        </record>
+        
+    </data>
+</openerp>

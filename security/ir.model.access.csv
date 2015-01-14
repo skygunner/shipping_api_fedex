@@ -1,0 +1,10 @@
+"id","name","model_id:id","group_id:id","perm_read","perm_write","perm_create","perm_unlink"
+"security_fedex_account_shipping_user","security.fedex.account.shipping.user","model_fedex_account_shipping","base.group_sale_salesman",1,1,1,0
+"security_fedex_account_shipping_manager","security.fedex.account.shipping.manager","model_fedex_account_shipping","base.group_erp_manager",1,1,1,1
+"security_fedex_shipping_service_type_user","security.fedex.shipping.service.type.user","model_fedex_shipping_service_type","base.group_sale_salesman",1,1,1,0
+"security_fedex_shipping_service_type_manager","security.fedex.shipping.service.type.manager","model_fedex_shipping_service_type","base.group_erp_manager",1,1,1,1
+"security_shipping_package_type_manager","security.shipping.package.type.manager","shipping_api.model_shipping_package_type","base.group_sale_manager",1,1,1,1
+"security_shipping_package_type_user","security.shipping.package.type.user","shipping_api.model_shipping_package_type","base.group_sale_salesman",1,1,1,0
+"security_fedex_account_shipping_employee","security.fedex.account.shipping.employee","model_fedex_account_shipping","base.group_user",1,1,1,1
+"security_fedex_shipping_service_type_employee","security.fedex.shipping.service.type.employee","model_fedex_shipping_service_type","base.group_user",1,1,1,1
+"security_shipping_package_type_employee","security.shipping.package.type.employee","shipping_api.model_shipping_package_type","base.group_user",1,1,1,1
