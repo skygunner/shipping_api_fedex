@@ -42,7 +42,7 @@
         'security/security.xml',
         'stock_view.xml',
         'stock_package_view.xml',
-        ],
+    ],
     'installable': True,
     'active': False,
 }

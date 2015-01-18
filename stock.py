@@ -117,7 +117,7 @@ class _base_stock_picking(object):
         if data.ship_company_code != 'fedex':
             return super(_base_stock_picking, self).process_ship(cr, uid, ids, context=context)
 
-        if not (data.logis_company or data.shipper or data.fedex_service):
+        if not (data.logis_company or data.shipper):
             raise osv.except_osv("Warning", "Please select a Logistics Company, Shipper and Shipping Service.")
 
         if not (data.logis_company and data.logis_company.ship_company_code == 'fedex'):

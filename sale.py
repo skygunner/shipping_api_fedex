@@ -42,12 +42,12 @@ class sale_order(osv.osv):
                             'fedex_packaging_type': sale.fedex_packaging_type and sale.fedex_packaging_type.id or False,
                             'ship_from_address':sale.fedex_shipper_id and sale.fedex_shipper_id.address and sale.fedex_shipper_id.address.id or False,
                             'shipcharge':sale.shipcharge or False
-                            }
+                        }
                         pick_obj.write(cr, uid, pick_ids, vals)
                 else:
                     pick_ids = pick_obj.search(cr, uid, [('sale_id', '=', sale.id), ('type', '=', 'out')])
                     if pick_ids:
-                        pick_obj.write(cr, uid, pick_ids, {'shipper': False, 'fedex_service': False}, context=context)
+                        pick_obj.write(cr, uid, pick_ids, {'shipper': False}, context=context)
         return result
 
     def _get_company_code(self, cr, user, context=None):
